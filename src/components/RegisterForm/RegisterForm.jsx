@@ -6,7 +6,7 @@ const RegisterForm = () => {
     const dispatch = useDispatch();
 
     const handleSubmit = (event) => {
-        event.preventDefault(); 
+        event.preventDefault();
         const form = event.currentTarget;
         dispatch(
             register({
@@ -17,14 +17,14 @@ const RegisterForm = () => {
         );
         form.reset();
     }
-    
+
     return (
         <div className={style.registrationForm}>
             <h3 className={style.formTitle}>Registration</h3>
         <form className={style.formField} onSubmit={handleSubmit} autoComplete="off">
             <label className={style.label}>
                 Username
-                <input type="text" name='name'/>
+                <input type="text" name='name' autoComplete='username'/>
             </label>
             <label className={style.label}>
                 Email
@@ -32,12 +32,12 @@ const RegisterForm = () => {
             </label>
             <label className={style.label}>
                 Password
-                <input type="password" name='password' />
+                <input type="password" name='password' autoComplete='current-password' />
             </label>
             <button type="submit" className={style.formSubmit}>Register</button>
             </form>
             </div>
       );
 }
- 
+
 export default RegisterForm;
